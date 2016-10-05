@@ -1,0 +1,51 @@
+
+
+    <div class="bg-top">
+
+     <div class="f1">
+      <h1>Great opportunities for young great people.</h1>
+      <h4>Lots of companies are searching for you, let them find you.</h3>
+     </div>
+
+
+
+   
+     <div class="search ">
+      <input type="text" class="camp1 col-lg-4 col-sm-4 col-xs-12" placeholder="Job title or key word">
+      <input type="text" class="camp2 col-lg-4 col-sm-4 col-xs-12" placeholder="Location">
+   <!--     <div class="camp1"></div>
+       <div class="camp2"></div> -->
+       <a href="" class="busca col-lg-2  col-s-2 col-xs-10">Search</a>
+     </div><!--fin search-->
+     
+    </div><!--fin bg-top-->
+
+    <div class="who">
+      <h1>TrainMe</h1>
+      <h4>It is the program that incorporates recent graduates and students of last semesters to working life. <br>Don’t miss time, and gain experience.<br><br></h4>
+    </div><!--fin who-->
+
+    <div class="container">
+
+      <div class="last"><p>Last profiles required by companies</p></div>
+
+     <% Offer.all.order("created_at DESC").each do |offer| %>
+        <%= render partial: "offers/offer_view", locals: {offer: offer} %>
+     <%end%>     
+
+
+
+      <!--browse more-->
+
+      <div class="browse col-lg-12">
+        <div class="bmore"><a href="">Browse more jobs</a></div>
+        
+      </div>
+
+
+      <div class="espacio">
+        
+      </div>
+
+
+    </div> <!-- /container -->

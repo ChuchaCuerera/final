@@ -1,0 +1,91 @@
+<!-- <h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+ -->
+
+
+
+  <div class="container">
+
+
+      <div class="dlog">
+
+        <div class="logb col-lg-6 col-lg-offset-3 ">
+          <div class="textlog">Find job or talents. <br>Log in to your acocunt</div>
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+
+          <div class="camps col-lg-10 col-lg-offset-1">
+            <div class="row">
+              <!-- <input type="text" class="camp col-lg-12 col-sm-12 col-xs-12 " placeholder="Email"> -->
+              <%= f.email_field :email, autofocus: true, class: "camp col-lg-12 col-sm-12 col-xs-12" , placeholder: "Email" %>
+            </div><!--fin row-->
+            <div class="row">
+              <!-- <input type="text" class="camp col-lg-12  col-sm-12 col-xs-12 " placeholder="Password"> -->
+               <%= f.password_field :password, autocomplete: "off", class: "camp col-lg-12  col-sm-12 col-xs-12 ",  placeholder: "Password" %>
+            </div><!--fin row-->
+            
+          </div><!--fin camps-->
+
+          
+
+          <div class="forgot col-lg-10 col-lg-offset-1">
+            <div class="row">
+             <span class="not">Not a member yet? </span> <a class="join" href="<%= new_user_registration_path %>">Join now</a> 
+            </div><!--fin row-->
+
+            <div class="row">
+             <a class="not" data-toggle="modal" data-target="#myModal">¿Forgot password?</a> 
+            </div><!--fin row-->
+
+
+          </div><!--fin forgot-->
+
+          <div class="row">
+             <div class="browse col-lg-12 col-sm-12 col-xs-12 ">
+               <%= f.submit "Log in", class: "bmore" %>
+
+           <!--  <div class="bmore"><a href="" id="submit">Browse more jobs</a></div> -->
+            <br><br><br>
+        
+          </div>
+          
+          </div><!--fin row-->
+
+          <% end %>
+         
+          
+        </div><!--logb-->
+        
+      </div><!--fin dlog-->
+
+      
+
+
+
+
+    </div> <!-- /container -->

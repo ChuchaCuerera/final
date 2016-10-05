@@ -1,0 +1,138 @@
+
+
+
+
+<div class="container">
+
+
+
+      <div class="dlog">
+
+
+     
+
+
+
+        <div class="logb col-lg-6 col-lg-offset-3 ">
+          <div class="textlog">You are near to suceed!</div>
+
+
+
+          <div class="camps col-lg-10 col-lg-offset-1">
+
+          <%= simple_form_for(@user) do |f| %>
+
+
+            <% if user.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+                  <ul>
+                  <% user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+
+
+
+              <div class="row ">
+                <%= f.association :role, label_html: { class: 'my_class' } %>
+
+            </div><!--fin row-->
+
+
+
+               
+
+            <div class="row ">
+              <%= f.input :avatar, label_html: { class: 'foto' } %>
+<!--  -->              <!-- <div class="foto"></div> -->
+              <!--fin foto-->
+            </div><!--fin row-->
+
+
+
+
+
+            <div class="row">
+              <%= f.input :name, label_html: { class: 'camp col-lg-12 col-sm-12 col-xs-12', placeholder: 'Full name' } %>
+             
+             <!--  <input type="text" class="camp col-lg-12 col-sm-12 col-xs-12 " placeholder="Full name"> -->
+            </div><!--fin row-->
+
+
+      
+
+            <div class="row">
+
+              <%= f.association :location, collection: Location.all.order("name ASC"), label_html: { class: 'camp' } %>
+         
+            </div><!--fin row-->
+
+            <div class="row">
+              <%= f.input :professional_title, label_html: { class: "camp col-lg-12 col-sm-12 col-xs-12 " ,placeholder: "Profession" } %>
+              
+
+            </div><!--fin row-->
+
+            <div class="row">
+             <%= f.association :category, collection: Category.all.order("name ASC"),label_html: { class: "camp col-lg-12 col-sm-12 col-xs-12 " ,placeholder: "Category Studies" } %>
+            </div><!--fin row-->
+
+            <div class="row">
+             <!--   <#%= f.association :skill, label_html: { class: "camp col-lg-12 col-sm-12 col-xs-12 " ,placeholder: "Skills" } %> -->
+             <!-- <select class="camp ">
+                <option value="">Abilities</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select> -->
+            </div><!--fin row-->
+
+
+
+            <div class="row">
+              <%= f.input :cv, label_html: { class: "camp col-lg-12 col-sm-12 col-xs-12 " ,placeholder: "Upload your CV"  } if @user.role.name == 'Postulante' %>
+             <!--   <#%= f.file_field :name, class: "camp col-lg-12 col-sm-12 col-xs-12 " ,placeholder: "Upload your CV" %> -->
+         </div><!--fin row-->
+
+          
+            
+          </div><!--fin camps-->
+
+         
+
+          <div class="row">
+             <div class="browse col-lg-12 col-sm-12 col-xs-12 ">
+              <%= f.button :submit, "Register", label_html: { class: "bmore" }%>
+               
+
+            <!-- <div class="bmore">
+
+              <a data-toggle="modal" data-target="#myModal">Register</a>
+            </div> -->
+            <br><br><br>
+        
+          </div>
+          
+          </div><!--fin row-->
+         <% end %>
+          
+        </div><!--logb-->
+        
+      </div><!--fin dlog-->
+
+       <div class="espacio">
+        
+      </div>
+
+
+      
+
+
+
+
+    </div> <!-- /container -->

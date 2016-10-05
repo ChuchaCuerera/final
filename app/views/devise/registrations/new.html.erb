@@ -1,0 +1,171 @@
+<!-- <h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <% Role.all.each do |r| %>
+      <%= f.label :role_id, r.name %><br />
+      <%= f.radio_button :role_id, r.id %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+ -->
+
+
+
+  <div class="container">
+
+
+
+      <div class="dlog">
+
+
+      <div class="">Are you a Company? Click <%= link_to  "Here", new_company_registration_path %></div>
+
+
+
+
+        <div class="logb col-lg-6 col-lg-offset-3 ">
+          <div class="textlog">You are near to suceed!</div>
+
+
+
+          <div class="camps col-lg-10 col-lg-offset-1">
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+          <%= devise_error_messages! %>
+
+
+            <div class="row ">
+              <%= f.file_field :avatar, class: "foto" %>
+              <!-- <div class="foto"></div> -->
+              <!--fin foto-->
+            </div><!--fin row-->
+
+
+
+
+
+            <div class="row">
+              <%= f.text_field :name, class: "camp col-lg-12 col-sm-12 col-xs-12 " ,placeholder: "Full name" %>
+             <!--  <input type="text" class="camp col-lg-12 col-sm-12 col-xs-12 " placeholder="Full name"> -->
+            </div><!--fin row-->
+
+
+            <div class="row">
+               <%= f.email_field :email, class: "camp col-lg-12 col-sm-12 col-xs-12 " ,placeholder: "Email" %>
+             <!--  <input type="text" class="camp col-lg-12 col-sm-12 col-xs-12 " placeholder="Email"> -->
+            </div><!--fin row-->
+            <div class="row">
+               <%= f.password_field :password, class: "camp col-lg-12 col-sm-12 col-xs-12 " ,placeholder: "Password" %>
+             <!--  <input type="text" class="camp col-lg-12  col-sm-12 col-xs-12 " placeholder="Password"> -->
+            </div><!--fin row-->
+
+             <div class="row">
+               <%= f.password_field :password_confirmation, class: "camp col-lg-12 col-sm-12 col-xs-12 " ,placeholder: "Password" %>
+            <!--   <input type="text" class="camp col-lg-12  col-sm-12 col-xs-12 " placeholder="Confirm Password"> -->
+            </div><!--fin row-->
+
+
+            <div class="row">
+             <select class="camp">
+                <option value="">Location</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+            </div><!--fin row-->
+
+            <div class="row">
+               <%= f.text_field :professional_title, class: "camp col-lg-12 col-sm-12 col-xs-12 " ,placeholder: "Profession" %>
+              <!-- <input type="text" class="camp col-lg-12  col-sm-12 col-xs-12 " placeholder="Profession (Ex. Chemical Engineer)"> -->
+            </div><!--fin row-->
+
+            <div class="row">
+             <select class="camp">
+                <option value="">Category Studies</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+            </div><!--fin row-->
+
+            <div class="row">
+             <select class="camp">
+                <option value="">Abilities</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+            </div><!--fin row-->
+
+
+
+            <div class="row">
+               <%= f.file_field :name, class: "camp col-lg-12 col-sm-12 col-xs-12 " ,placeholder: "Upload your CV" %>
+              <!-- <input type="text" class="camp col-lg-10  col-sm-10 col-xs-10 " placeholder="Upload your CV "> -->
+<!--               <a href="" class="">Search</a>
+ -->            </div><!--fin row-->
+
+          
+            
+          </div><!--fin camps-->
+
+         
+
+          <div class="row">
+             <div class="browse col-lg-12 col-sm-12 col-xs-12 ">
+               <%= f.submit "Register", class: "bmore" %>
+
+            <!-- <div class="bmore">
+
+              <a data-toggle="modal" data-target="#myModal">Register</a>
+            </div> -->
+            <br><br><br>
+        
+          </div>
+          
+          </div><!--fin row-->
+         <% end %>
+          
+        </div><!--logb-->
+        
+      </div><!--fin dlog-->
+
+       <div class="espacio">
+        
+      </div>
+
+
+      
+
+
+
+
+    </div> <!-- /container -->

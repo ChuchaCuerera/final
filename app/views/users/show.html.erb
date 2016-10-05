@@ -1,0 +1,86 @@
+
+<!-- 
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Título Profesional:</strong>
+  <%= @user.professional_title %>
+</p>
+
+<p>
+  <strong>Ubicación:</strong>
+  <%= @user.location %>
+</p>
+
+<p>
+  <strong>Categoría:</strong>
+  <%= @user.category %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.category %>
+</p>
+
+<p>
+  <strong>Sube tu foto:</strong>
+  <%= @user.avatar %>
+</p>
+
+<p>
+  <strong>Sube tu CV:</strong>
+  <%= @user.cv %>
+</p>
+ -->
+
+<div class="container">
+
+   
+
+      <div class="row profile-info col-lg-12 col-xs-12">
+        <div class="photo col-lg-3"><img src="<%= @user.avatar ? @user.avatar.url : '' %>" alt=""></div><!--fin photo-->
+        <div class="datos col-lg-9">
+          <div class=" row fullname"> <%= @user.name %></div>
+          <div class=" row fullname"> <%= @user.email %></div>
+          <div class="row professionp"> <%= @user.professional_title %></div>
+          <div class="row locationp"><span class="glyphicon glyphicon-map-marker"> &nbsp;<%= @user.location ? @user.location.name : " " %></div>
+          <div class="row categoryp"> <%= @user.category ? @user.category.name : " " %></div>
+          <div class="row abilitiesp"></div>
+          <div class="row linkcv"><%= link_to "See CV" , @user.cv ? @user.cv.url : "#" , target: "_blank"%></div>
+        </div><!--fin datos-->
+
+
+      </div><!--fin row profile info-->
+
+      <div class="row extra">
+        <div class="postulations"></div><!--fin postulations-->
+        <div class="suggested"></div><!--fin suggested-->
+        <div class="views"></div><!--fin views-->
+      </div><!--fin row extra-->
+
+
+
+     
+
+      
+
+
+
+
+    </div> <!-- /container -->
+
+
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

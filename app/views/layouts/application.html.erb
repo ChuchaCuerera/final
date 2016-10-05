@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trainee</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="<%=root_path%>"><%= image_tag 'logo_min.png' %></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="<%= user_path(1) %>"> Upload CV </a></li>
+            <li><a href="../navbar-static-top/">Post a Job</a></li>
+
+            <% if user_signed_in? %>
+            	<li><%= link_to('Log out', destroy_user_session_path, :method => :delete) %></li>
+            <% else %>	
+			 	<li><a href="<%= new_user_session_path %>"> Sign In </a></li>
+			<% end %>
+
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!--fin container-->
+    </nav>
+
+
+    	<% if user_signed_in? %>
+     <div class="container">
+        	 <div class="row notifications col-lg-2 col-lg-offset-10 col-xs-12">
+         <div class="profile col-lg-1 col-xs-2"><a href="<%= user_path(current_user) %>"><span class="glyphicon glyphicon-user"></span></a></div><!--fin message-->
+        <div class="message col-lg-1 col-xs-2"><span class="glyphicon glyphicon-envelope"></span></div><!--fin message-->
+        <div class="bell col-lg-1 col-xs-2" ><span class="glyphicon glyphicon-bell"></span></div><!--fin bell-->
+       
+      </div><!--fin notifications-->
+        	
+        </div><!--fin container-->
+      <%end%>
+	
+
+
+
+  
+
+    <%= yield %>
+
+
+     <div class="footer col-lg-12">
+
+      <div class="text-foot">
+        TrainMe.     All rights reserved 2016.    México
+      </div>
+      
+    </div><!--fin footer-->
+
+
+  </body>
+</html>

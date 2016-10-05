@@ -1,0 +1,21 @@
+  <% if offer%>
+
+  <div class="line col-lg-12  col-xs-12"></div><!--line-->
+
+
+      <!--ejemplo de vacante home-->
+      <div class="update col-lg-12">
+        <div class="company col-lg-4 col-xs-12">
+          <div class="pic col-lg-4"><%= offer.user ? offer.user.avatar.url :  " " %></div>
+          <div class="vac col-lg-8 col-xs-12"><%= offer.name %></div>
+          <div class="namec col-lg-8 col-xs-12"><%= offer.user ? offer.user.name :  " " %></div>
+          
+        </div>
+        <div class="location col-lg-4 col-xs-12">
+          <span class="glyphicon glyphicon-map-marker"></span>&nbsp;<%= offer.location ? offer.location.name :  " " %>
+        </div>
+        <div class="see col-lg-4 col-xs-12">
+          <a href="" class="more">See more</a>
+        </div>
+      </div><!--fin update-->
+<% end%>

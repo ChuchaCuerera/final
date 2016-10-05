@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offer_id: one
+  skill_id: one
+
+two:
+  offer_id: two
+  skill_id: two
